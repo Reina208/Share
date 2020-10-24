@@ -4,9 +4,9 @@
     <div class="card">
       <p>新規登録</p>
       <div class="form">
-        <input placeholder="メールアドレス" type="email" />
-        <input placeholder="password" />
-        <button>ログイン</button>
+        <input placeholder="メールアドレス" type="email" v-model="email" />
+        <input placeholder="password" v-model="password" />
+        <button @click="auth">ログイン</button>
       </div>
     </div>
   </div>
@@ -15,8 +15,22 @@
 <script>
 import HeaderAuth from "../components/HeaderAuth";
 export default{
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
   components: {
     HeaderAuth
+  },
+  methods: {
+    auth() {
+      this.$store.dispatch("login", {
+        email: this.email,
+        password: this.password
+      });
+    }
   }
 };
 </script>
