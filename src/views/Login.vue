@@ -2,7 +2,7 @@
   <div>
     <HeaderAuth />
     <div class="card">
-      <p>新規登録</p>
+      <p>ログイン</p>
       <div class="form">
         <input placeholder="メールアドレス" type="email" v-model="email" />
         <input placeholder="password" v-model="password" />
