@@ -29,14 +29,14 @@ export default new Vuex.Store({
   actions: {
     async login({ commit }, { email, password }) {
       let responseLogin = await axios.post(
-        "https://tranquil-savannah-12583.herokuapp.com/api/user",
+        "https://tranquil-savannah-12583.herokuapp.com/api/login",
         {
           email: email,
           password: password,
         }
       );
       let responseUser = await axios.get(
-        "https://tranquil-savannah-12583.herokuapp.com",
+        "https://tranquil-savannah-12583.herokuapp.com/api/user",
         {
           params: {
             email: email,
